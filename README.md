@@ -64,7 +64,7 @@ To identify an SSL Attack Note DDoS attack, monitoring the SSL/TLS handshake pro
 
 SSL/TLS Exhaustion DDoS Attacks present a real danger because a single home computer can take down an entire SSL-encrypted web application. A cluster of computers are capable of knocking out a large farm of secured online services. These types of DDoS attacks are highly popular because they require minimal efforts for maximum impact. Each SSL session handshake exhausts 15 times more resources from the server side than from the client side.
 
-### Mitigation:
+**Mitigation:**
 
 Mitigating SSL Attack Note DDoS attacks involves implementing various strategies:
 
