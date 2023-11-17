@@ -1,5 +1,5 @@
 # Section 1
-Challenge Collapsar (CC) attack
+## Challenge Collapsar (CC) attack
 
 **Cause:**
 In a Challenge Collapsar (CC) attack, the attacker uses a proxy server to generate and send a huge number of requests to the target host. Additionally, the attacker floods the system with a large number of data packets to the target server to exhaust its resources. Ultimately, the target server stops responding to requests.
@@ -20,11 +20,10 @@ There are two effective methods of DDoS protection to mitigate this particular C
    Use a web application firewall (WAF) with challenge-based algorithms to filter out CC attack bots. Built on a global public cloud infrastructure, leverage computing power via Multi CDN to auto-scale defenses proportionate to the attack. This capability allowed us to fend off a 300-million-request-per-minute CC attack.
 
 ------------------------------------------------------------------------------------------------------------------------------------
-SYN Flood DDoS attack 
+## SYN Flood DDoS attack 
 
 **Cause:**
 
-**SYN Flood DDoS Attack:**
 In a SYN Flood DDoS attack, the attacker exploits the TCP handshake processwhich aims to make a server unavailable to legitimate traffic by consuming all available server resources. The attacker sends a large number of connection requests (SYN packets) to the target server but does not complete the handshake by sending the expected ACK packets. This leads to a depletion of resources on the target server as it maintains partially open connections waiting for completion
 
 **Identify:**
@@ -53,9 +52,8 @@ Mitigating SYN Flood DDoS attacks involves implementing various strategies:
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
-SSL Attack Note DDoS attack 
+## SSL Attack Note DDoS attack 
 **Cause:**
-
 In an SSL Attack Note DDoS attack, the attacker targets the SSL/TLS handshake process during the establishment of secure connections. The attacker floods the target server with specially crafted SSL/TLS handshake requests, The Pushdo botnet accomplishes this quite easily by sending garbage data to a target SSL server. The SSL protocol is computationally expensive and it generates extra workload on the server to process garbage data as a legitimate handshake and firewalls don't help in this case because they are usually not capable of differentiating between valid and invalid SSL handshake packets. 
 
 **Identify:**
