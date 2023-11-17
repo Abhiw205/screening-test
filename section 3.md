@@ -109,3 +109,7 @@ dependencies:
   roles:
     - kong
 ```
+### step 7:- Finally run playbook on target host 
+```
+ansible-playbook -i 127.0.0.1 playbook.yml
+```
