@@ -1,4 +1,5 @@
-## Steps to install Nginx 1.23.1 from source without using apt package namger 
+## Steps to install Nginx 1.23.1 from source without using apt package manager
+
 ### Step 1: Install Prerequisites
 sudo apt-get install build-essential libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev libgd-dev libxml2 libxml2-dev uuid-dev
 
@@ -22,3 +23,26 @@ sudo make install
 
 ### Step 8: Start Nginx Server
 sudo nginx
+
+## Steps to configure example.com on installed webserver 
+
+### step 1: Create a directory and index.html file
+
+sudo mkdir -p /var/www/example.com
+sudo nano /var/www/example.com/index.html
+
+### step 2: Insert sample code in index.html 
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to example.com</title>
+</head>
+<body>
+    <h1>Hello, example.com!</h1>
+    <p>This is a sample HTML website hosted on Nginx.</p>
+</body>
+</html>
+```
