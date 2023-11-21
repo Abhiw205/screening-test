@@ -29,7 +29,6 @@ kong_gateway/
     state: present
   with_items:
     - unzip
-    - libpcre3-dev
     - libssl-dev
     - libexpat1-dev
     - libyaml-dev
@@ -60,12 +59,18 @@ kong_gateway/
   template:
     src: kong.service.j2
     dest: /etc/systemd/system/kong.service
-  notify: Restart Kong Service
+      # notify: Restart Kong Service
 
 - name: Ensure Kong is running
   systemd:
     name: kong
     state: started
+    enabled: yes
+
+- name: Restart Kong Service
+  systemd:
+    name: kong
+    state: restarted
     enabled: yes
 ```
 
@@ -89,27 +94,17 @@ WantedBy=default.target
 
 ```
 
-### step 5:- write below given content in roles/kong/meta/main.yml
-```
----
-dependencies:
-  - name: "Install required dependencies"
-    src: "unarchive"
-
-  - name: "Ensure Kong is running"
-    src: "systemd"
-```
-
-### step 6:- Now in last insert following code in playbook.yml to call kong role 
+### step 5:- Now in last insert following code in playbook.yml to call kong role 
 ```
 ---
 - name: Install Kong Gateway
-  hosts: your_target_server
+  hosts: localhost
+  connection: local
   become: yes
   roles:
     - kong
 ```
-### step 7:- Finally run playbook on target host 
+### step 6:- Finally run playbook on target host 
 ```
-ansible-playbook -i 127.0.0.1 playbook.yml
+ansible-playbook playbook.yml
 ```
