@@ -63,13 +63,13 @@ sudo nano /etc/nginx/nginx.conf
 ```
 http {
     upstream backend {
-        server 10.12.0.1;
-        server 10.13.0.1;
-        # These are my local ip address. 
+        server localhost:8080;
+        server www.example.com;
+        # I am running this server in windows WSL where port 80 is pre occupied. so using port 8080 and example.com to distribute load 
     }
 
     server {
-        listen 80;
+        listen 8080;
         server_name example.com;
 
         location / {
@@ -90,5 +90,5 @@ sudo nginx -t
 
 ## setep 6:- Reload nginx service to make new configuration effactive
 ```
-sudo systemctl restart nginx
+sudo nginx -s reload
 ```
